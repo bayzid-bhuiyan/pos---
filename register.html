@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="main-content">
+    <h2>Register</h2>
+    <input type="text" id="regUsername" placeholder="Username">
+    <input type="password" id="regPassword" placeholder="Password">
+    <select id="regRole">
+      <option value="admin">Admin</option>
+      <option value="cashier">Cashier</option>
+      <option value="manager">Product Manager</option>
+    </select>
+    <button onclick="register()">Register</button>
+    <p id="regMsg"></p>
+    <p>Already registered? <a href="index.html">Login</a></p>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

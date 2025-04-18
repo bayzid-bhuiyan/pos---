@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Management</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <script>
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (!user) window.location.href = "index.html";
+  </script>
+
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+      <h2>POS System</h2>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="products.html">Products</a>
+      <a href="sales.html">Sales</a>
+      <a href="customers.html">Customers</a>
+      <a href="image-search.html">Image Search</a>
+      <a href="index.html" onclick="logout()">Logout</a>
+    </div>
+    <div class="main-content">
+      <h2>Customers</h2>
+
+      <form id="customerForm" onsubmit="event.preventDefault(); addCustomer();">
+        <input type="text" id="customerName" placeholder="Name" required>
+        <input type="email" id="customerEmail" placeholder="Email" required>
+        <input type="text" id="customerPhone" placeholder="Phone" required>
+        <button type="submit">Add Customer</button>
+      </form>
+
+      <h3>Customer List</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th><th>Email</th><th>Phone</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="customerTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

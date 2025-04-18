@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <script>
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (!user) window.location.href = "index.html";
+  </script>
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+      <h2>POS System</h2>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="products.html">Products</a>
+      <a href="sales.html">Sales</a>
+      <a href="index.html" onclick="logout()">Logout</a>
+    </div>
+    <div class="main-content">
+      <h2>Welcome to the POS Dashboard</h2>
+      <p id="welcomeMsg"></p>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
